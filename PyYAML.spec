@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 3.11
-Release  : 15
+Release  : 16
 URL      : https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.11.tar.gz
 Source0  : https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.11.tar.gz
 Summary  : YAML parser and emitter for Python
