@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 3.12
-Release  : 22
+Release  : 23
 URL      : http://pypi.debian.net/PyYAML/PyYAML-3.12.tar.gz
 Source0  : http://pypi.debian.net/PyYAML/PyYAML-3.12.tar.gz
 Summary  : YAML parser and emitter for Python
@@ -19,8 +19,16 @@ BuildRequires : setuptools
 BuildRequires : yaml-dev
 
 %description
-PyYAML - The next generation YAML parser and emitter for Python.
-To install, type 'python setup.py install'.
+and interaction with scripting languages.  PyYAML is a YAML parser
+        and emitter for Python.
+        
+        PyYAML features a complete YAML 1.1 parser, Unicode support, pickle
+        support, capable extension API, and sensible error messages.  PyYAML
+        supports standard YAML tags and provides Python-specific tags that
+        allow to represent an arbitrary Python object.
+        
+        PyYAML is applicable for a broad range of tasks from complex
+        configuration files to object serialization and persistance.
 
 %package python
 Summary: python components for the PyYAML package.
@@ -35,8 +43,11 @@ python components for the PyYAML package.
 %setup -q -n PyYAML-3.12
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1484570758
+export SOURCE_DATE_EPOCH=1503076959
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -46,14 +57,18 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python setup.py test
 %install
-export SOURCE_DATE_EPOCH=1484570758
+export SOURCE_DATE_EPOCH=1503076959
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
+/usr/lib/python3*/*
