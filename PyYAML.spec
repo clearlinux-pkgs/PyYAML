@@ -4,13 +4,14 @@
 #
 Name     : PyYAML
 Version  : 3.12
-Release  : 25
+Release  : 26
 URL      : http://pypi.debian.net/PyYAML/PyYAML-3.12.tar.gz
 Source0  : http://pypi.debian.net/PyYAML/PyYAML-3.12.tar.gz
 Summary  : YAML parser and emitter for Python
 Group    : Development/Tools
 License  : MIT
 Requires: PyYAML-legacypython
+Requires: PyYAML-python3
 Requires: PyYAML-python
 BuildRequires : pbr
 BuildRequires : pip
@@ -34,6 +35,7 @@ and interaction with scripting languages.  PyYAML is a YAML parser
 %package legacypython
 Summary: legacypython components for the PyYAML package.
 Group: Default
+Requires: python-core
 
 %description legacypython
 legacypython components for the PyYAML package.
@@ -43,10 +45,20 @@ legacypython components for the PyYAML package.
 Summary: python components for the PyYAML package.
 Group: Default
 Requires: PyYAML-legacypython
+Requires: PyYAML-python3
 Provides: pyyaml-python
 
 %description python
 python components for the PyYAML package.
+
+
+%package python3
+Summary: python3 components for the PyYAML package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the PyYAML package.
 
 
 %prep
@@ -57,7 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505421187
+export SOURCE_DATE_EPOCH=1507170872
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -67,7 +79,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python setup.py test
 %install
-export SOURCE_DATE_EPOCH=1505421187
+export SOURCE_DATE_EPOCH=1507170872
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -83,5 +95,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
