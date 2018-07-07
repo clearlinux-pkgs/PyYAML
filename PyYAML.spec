@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 3.12
-Release  : 40
+Release  : 41
 URL      : http://pypi.debian.net/PyYAML/PyYAML-3.12.tar.gz
 Source0  : http://pypi.debian.net/PyYAML/PyYAML-3.12.tar.gz
 Summary  : YAML parser and emitter for Python
