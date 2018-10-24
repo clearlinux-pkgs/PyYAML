@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 3.13
-Release  : 43
+Release  : 44
 URL      : https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz
 Source0  : https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz
 Summary  : YAML parser and emitter for Python
