@@ -1,8 +1,15 @@
 # This file contains recursive sources that require this package
-Cheetah
+ConfigArgParse
+Django
 Keras
-Keras_Applications
-Keras_Preprocessing
 Markdown
-libstoragemgmt
+docker-compose
+gabbi
+horizon
+mxnet
 pyaml
+pybtex
+pytorch
+suricata
+ua-parser
+vcstool

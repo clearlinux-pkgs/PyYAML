@@ -4,15 +4,15 @@
 #
 Name     : PyYAML
 Version  : 3.13
-Release  : 45
+Release  : 46
 URL      : https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz
 Source0  : https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz
 Summary  : YAML parser and emitter for Python
 Group    : Development/Tools
 License  : MIT
-Requires: PyYAML-python3
-Requires: PyYAML-license
-Requires: PyYAML-python
+Requires: PyYAML-license = %{version}-%{release}
+Requires: PyYAML-python = %{version}-%{release}
+Requires: PyYAML-python3 = %{version}-%{release}
 BuildRequires : Cython
 BuildRequires : Cython-legacypython
 BuildRequires : buildreq-distutils23
@@ -20,6 +20,8 @@ BuildRequires : buildreq-distutils3
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : yaml-dev
+Patch1: 0001-CVE-2017-18342-1.patch
+Patch2: 0002-CVE-2017-18342-2.patch
 
 %description
 and interaction with scripting languages.  PyYAML is a YAML parser
@@ -53,7 +55,7 @@ license components for the PyYAML package.
 %package python
 Summary: python components for the PyYAML package.
 Group: Default
-Requires: PyYAML-python3
+Requires: PyYAML-python3 = %{version}-%{release}
 Provides: pyyaml-python
 
 %description python
@@ -71,13 +73,16 @@ python3 components for the PyYAML package.
 
 %prep
 %setup -q -n PyYAML-3.13
+%patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1534602675
+export SOURCE_DATE_EPOCH=1551413140
+export LDFLAGS="${LDFLAGS} -fno-lto"
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -87,10 +92,10 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1534602675
+export SOURCE_DATE_EPOCH=1551413140
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/PyYAML
-cp LICENSE %{buildroot}/usr/share/doc/PyYAML/LICENSE
+mkdir -p %{buildroot}/usr/share/package-licenses/PyYAML
+cp LICENSE %{buildroot}/usr/share/package-licenses/PyYAML/LICENSE
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
@@ -105,8 +110,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/PyYAML/LICENSE
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/PyYAML/LICENSE
 
 %files python
 %defattr(-,root,root,-)
