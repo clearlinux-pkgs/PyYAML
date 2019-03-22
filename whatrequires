@@ -3,6 +3,7 @@ ConfigArgParse
 Django
 Keras
 Markdown
+certbot
 docker-compose
 gabbi
 horizon
@@ -11,5 +12,6 @@ pyaml
 pybtex
 pytorch
 suricata
+tpm2-tools
 ua-parser
 vcstool
