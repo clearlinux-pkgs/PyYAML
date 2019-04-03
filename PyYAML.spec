@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 5.1
-Release  : 49
+Release  : 50
 URL      : https://github.com/yaml/pyyaml/archive/5.1.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/5.1.tar.gz
 Summary  : No detailed summary available
@@ -14,7 +14,6 @@ Requires: PyYAML-license = %{version}-%{release}
 Requires: PyYAML-python = %{version}-%{release}
 Requires: PyYAML-python3 = %{version}-%{release}
 BuildRequires : Cython
-BuildRequires : buildreq-distutils23
 BuildRequires : buildreq-distutils3
 BuildRequires : deprecated-Cython-legacypython
 BuildRequires : python-dev
@@ -24,15 +23,6 @@ BuildRequires : yaml-dev
 %description
 PyYAML - The next generation YAML parser and emitter for Python.
 To install, type 'python setup.py install'.
-
-%package legacypython
-Summary: legacypython components for the PyYAML package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the PyYAML package.
-
 
 %package license
 Summary: license components for the PyYAML package.
@@ -69,9 +59,9 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554317504
-python2 setup.py build -b py2
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1554327553
+export MAKEFLAGS=%{?_smp_mflags}
+python3 setup.py build
 
 %check
 export http_proxy=http://127.0.0.1:9/
@@ -79,22 +69,17 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1554317504
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/PyYAML
 cp LICENSE %{buildroot}/usr/share/package-licenses/PyYAML/LICENSE
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files license
 %defattr(0644,root,root,0755)
