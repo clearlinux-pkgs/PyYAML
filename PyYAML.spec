@@ -4,18 +4,19 @@
 #
 Name     : PyYAML
 Version  : 5.1
-Release  : 48
+Release  : 49
 URL      : https://github.com/yaml/pyyaml/archive/5.1.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/5.1.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
+Requires: PyYAML-license = %{version}-%{release}
 Requires: PyYAML-python = %{version}-%{release}
 Requires: PyYAML-python3 = %{version}-%{release}
 BuildRequires : Cython
-BuildRequires : Cython-legacypython
 BuildRequires : buildreq-distutils23
 BuildRequires : buildreq-distutils3
+BuildRequires : deprecated-Cython-legacypython
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : yaml-dev
@@ -31,6 +32,14 @@ Requires: python-core
 
 %description legacypython
 legacypython components for the PyYAML package.
+
+
+%package license
+Summary: license components for the PyYAML package.
+Group: Default
+
+%description license
+license components for the PyYAML package.
 
 
 %package python
@@ -60,8 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1553297306
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export SOURCE_DATE_EPOCH=1554317504
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -71,8 +79,10 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1553297306
+export SOURCE_DATE_EPOCH=1554317504
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/PyYAML
+cp LICENSE %{buildroot}/usr/share/package-licenses/PyYAML/LICENSE
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
@@ -85,6 +95,10 @@ echo ----[ mark ]----
 %files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/PyYAML/LICENSE
 
 %files python
 %defattr(-,root,root,-)

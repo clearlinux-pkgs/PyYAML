@@ -3,4 +3,4 @@
 yaml-dev
 python-dev
 Cython
-Cython-legacypython
+deprecated-Cython-legacypython
