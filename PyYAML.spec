@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 5.1
-Release  : 50
+Release  : 51
 URL      : https://github.com/yaml/pyyaml/archive/5.1.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/5.1.tar.gz
 Summary  : No detailed summary available
@@ -59,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554327553
+export SOURCE_DATE_EPOCH=1554341656
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
