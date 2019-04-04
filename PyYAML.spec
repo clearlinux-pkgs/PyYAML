@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 3.13
-Release  : 53
+Release  : 54
 URL      : https://github.com/yaml/pyyaml/archive/3.13.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/3.13.tar.gz
 Summary  : No detailed summary available
@@ -15,7 +15,6 @@ Requires: PyYAML-python = %{version}-%{release}
 Requires: PyYAML-python3 = %{version}-%{release}
 BuildRequires : Cython
 BuildRequires : buildreq-distutils3
-BuildRequires : deprecated-Cython-legacypython
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : yaml-dev
@@ -63,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554349024
+export SOURCE_DATE_EPOCH=1554350140
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
