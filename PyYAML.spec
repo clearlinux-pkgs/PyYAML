@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 3.13
-Release  : 54
+Release  : 55
 URL      : https://github.com/yaml/pyyaml/archive/3.13.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/3.13.tar.gz
 Summary  : No detailed summary available
