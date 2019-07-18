@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 5.1.1
-Release  : 57
+Release  : 58
 URL      : https://github.com/yaml/pyyaml/archive/5.1.1/pyyaml-5.1.1.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/5.1.1/pyyaml-5.1.1.tar.gz
 Summary  : No detailed summary available
@@ -57,8 +57,8 @@ python3 components for the PyYAML package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1561733634
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1563471559
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

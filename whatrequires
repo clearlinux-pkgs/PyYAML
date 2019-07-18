@@ -15,6 +15,7 @@ deprecated-python-dldt
 distributed
 dldt
 dldt-model-optimizer
+dns-lexicon
 docker-compose
 gabbi
 horizon
@@ -23,6 +24,7 @@ lutris
 msm
 mxnet
 openstacksdk
+os-api-ref
 oslo.config
 oslo.messaging
 oslo.serialization
