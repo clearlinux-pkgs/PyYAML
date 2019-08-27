@@ -27,6 +27,7 @@ openstacksdk
 os-api-ref
 oslo.config
 oslo.messaging
+oslo.policy
 oslo.serialization
 oslo.vmware
 pyaml
@@ -35,8 +36,10 @@ pykwalify
 python-coveralls
 python-dldt
 python-mistralclient
+python-senlinclient
 pytorch
 pywbem
+rospkg
 suricata
 tempest
 tpm2-tools
