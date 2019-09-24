@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 5.1.2
-Release  : 60
+Release  : 61
 URL      : https://github.com/yaml/pyyaml/archive/5.1.2/pyyaml-5.1.2.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/5.1.2/pyyaml-5.1.2.tar.gz
 Summary  : No detailed summary available
@@ -15,7 +15,6 @@ Requires: PyYAML-python = %{version}-%{release}
 Requires: PyYAML-python3 = %{version}-%{release}
 BuildRequires : Cython
 BuildRequires : buildreq-distutils3
-BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : yaml-dev
 
@@ -58,7 +57,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1566917616
+export SOURCE_DATE_EPOCH=1569348722
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

@@ -22,6 +22,7 @@ horizon
 kombu
 lutris
 msm
+mvn-lucene-solr
 mxnet
 openstacksdk
 os-api-ref
@@ -34,12 +35,12 @@ pyaml
 pybtex
 pykwalify
 python-coveralls
-python-dldt
 python-mistralclient
 python-senlinclient
 pytorch
 pywbem
 rospkg
+stestr
 suricata
 tempest
 tpm2-tools
