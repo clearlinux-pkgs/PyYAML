@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 5.1.2
-Release  : 61
+Release  : 62
 URL      : https://github.com/yaml/pyyaml/archive/5.1.2/pyyaml-5.1.2.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/5.1.2/pyyaml-5.1.2.tar.gz
 Summary  : No detailed summary available
