@@ -10,8 +10,9 @@ bandit
 bokeh
 certbot
 cliff
-deprecated-Markdown
-deprecated-python-dldt
+cloudflare
+colcon-defaults
+colcon-metadata
 distributed
 dldt
 dldt-model-optimizer
@@ -19,11 +20,13 @@ dns-lexicon
 docker-compose
 gabbi
 horizon
+horovod
 kombu
 lutris
 msm
 mvn-lucene-solr
 mxnet
+networkx
 openstacksdk
 os-api-ref
 oslo.config
@@ -39,6 +42,7 @@ python-mistralclient
 python-senlinclient
 pytorch
 pywbem
+rosdistro
 rospkg
 stestr
 suricata
@@ -46,3 +50,4 @@ tempest
 tpm2-tools
 ua-parser
 vcstool
+vpp
