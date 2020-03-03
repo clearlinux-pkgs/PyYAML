@@ -4,10 +4,10 @@
 #
 Name     : PyYAML
 Version  : 5.3
-Release  : 66
+Release  : 67
 URL      : https://github.com/yaml/pyyaml/archive/5.3/pyyaml-5.3.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/5.3/pyyaml-5.3.tar.gz
-Summary  : No detailed summary available
+Summary  : YAML parser and emitter for Python
 Group    : Development/Tools
 License  : MIT
 Requires: PyYAML-license = %{version}-%{release}
@@ -44,6 +44,7 @@ python components for the PyYAML package.
 Summary: python3 components for the PyYAML package.
 Group: Default
 Requires: python3-core
+Provides: pypi(PyYAML)
 
 %description python3
 python3 components for the PyYAML package.
@@ -58,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579194025
+export SOURCE_DATE_EPOCH=1583217623
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
