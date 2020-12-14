@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 5.3.1
-Release  : 71
+Release  : 72
 URL      : https://github.com/yaml/pyyaml/archive/5.3.1/pyyaml-5.3.1.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/5.3.1/pyyaml-5.3.1.tar.gz
 Summary  : YAML parser and emitter for Python
