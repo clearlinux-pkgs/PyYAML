@@ -15,6 +15,7 @@ cve-bin-tool
 dask
 distributed
 docker-compose
+gsutil
 home-assistant
 horovod
 knack
