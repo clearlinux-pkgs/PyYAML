@@ -1,11 +1,10 @@
 # This file contains recursive sources that require this package
-ConfigArgParse
-Cura
 Django
 Keras
 Markdown
 QGIS
 ansible
+ansible-core
 awscli
 bokeh
 ceph
@@ -18,12 +17,15 @@ docker-compose
 gsutil
 home-assistant
 horovod
+kapidox
 knack
+libcst
 lutris
 mxnet
-networkx
+ostree
 ouimeaux
 pdns
+pre_commit
 pyaml
 pytorch
 pywbem
@@ -32,4 +34,5 @@ suricata
 tap.py
 ua-parser
 vpp
+watchdog
 yamlloader
