@@ -4,7 +4,7 @@
 #
 Name     : PyYAML
 Version  : 6.0
-Release  : 86
+Release  : 87
 URL      : https://github.com/yaml/pyyaml/archive/6.0/pyyaml-6.0.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/6.0/pyyaml-6.0.tar.gz
 Summary  : YAML parser and emitter for Python
@@ -13,8 +13,11 @@ License  : MIT
 Requires: PyYAML-license = %{version}-%{release}
 Requires: PyYAML-python = %{version}-%{release}
 Requires: PyYAML-python3 = %{version}-%{release}
-BuildRequires : Cython
 BuildRequires : buildreq-distutils3
+BuildRequires : pypi(cython)
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(wheel)
+BuildRequires : pypi-cython
 BuildRequires : yaml-dev
 
 %description
@@ -60,7 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1634220924
+export SOURCE_DATE_EPOCH=1642362003
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
