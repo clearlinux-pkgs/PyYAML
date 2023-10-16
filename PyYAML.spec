@@ -5,7 +5,7 @@
 #
 Name     : PyYAML
 Version  : 6.0.1
-Release  : 90
+Release  : 91
 URL      : https://github.com/yaml/pyyaml/archive/6.0.1/pyyaml-6.0.1.tar.gz
 Source0  : https://github.com/yaml/pyyaml/archive/6.0.1/pyyaml-6.0.1.tar.gz
 Summary  : YAML parser and emitter for Python
